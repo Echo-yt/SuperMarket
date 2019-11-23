@@ -59,5 +59,4 @@ public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
         dao.insert(entity);
     }
 
-
 }
