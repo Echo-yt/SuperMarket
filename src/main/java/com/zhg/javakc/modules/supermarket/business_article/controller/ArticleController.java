@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,10 +39,10 @@ public class ArticleController {
     }
 
     @RequestMapping("article/create")
-    public String create(@RequestBody ArticleEntity entity){
+    public String create(ArticleEntity entity){
         entity.setArticleId(CommonUtil.uuid());
         articleService.save(entity);
-        return "redirect:supermarket/article.do";
+        return "redirect:/supermarket/article.do";
     }
 
     @RequestMapping("article/view")
@@ -56,13 +55,13 @@ public class ArticleController {
     @RequestMapping("article/update")
     public String update(ArticleEntity entity){
         articleService.update(entity);
-        return "redirect:supermarket/article.do";
+        return "redirect:/supermarket/article.do";
     }
 
     @RequestMapping("article/delete")
     public String delete(String ids[]){
         articleService.delete(ids);
-        return "redirect:supermarket/article.do";
+        return "redirect:/supermarket/article.do";
     }
 
     @PostMapping("article/photo")
