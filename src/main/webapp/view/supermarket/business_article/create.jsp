@@ -13,37 +13,37 @@
                                      onclick="javascript:history.back();"/></div>
     </div>
     <div class="ibox float-e-margins">
-        <form action="${path }/supermarket/article/create.do" method="post" class="form-horizontal" role="form">
+        <form action="${path}/supermarket/article/create.do" method="post" class="form-horizontal" role="form">
             <fieldset>
                 <legend>文章基本信息</legend>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="ds_host">标题</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleName" placeholder="标题"/>
+                        <input class="form-control" type="text" name="articleName" value="" placeholder="标题"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="ds_name">入口图片</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleImage" placeholder="入口图片"/>
+                        <input class="form-control" type="text" name="articleImage" value="" placeholder="入口图片"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="ds_username">分组</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleGroup" placeholder="分组"/>
+                        <input class="form-control" type="text" name="articleGroup" value="" placeholder="分组"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="ds_username">文件简介</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDescript" placeholder="文件简介"/>
+                        <input class="form-control" type="text" name="articleDescript" value="" placeholder="文件简介"/>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-2 control-label" for="ds_username">文章简介</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDetail" placeholder="文章简介"/>
+                        <input class="form-control" type="text" name="articleDetail" value="" placeholder="文章简介"/>
                     </div>
                 </div>
             </fieldset>
