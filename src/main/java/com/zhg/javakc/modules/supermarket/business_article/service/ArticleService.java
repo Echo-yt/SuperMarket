@@ -41,18 +41,20 @@ public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
 
     @Transactional(readOnly = false)
     public void save(ArticleEntity entity) {
-        try {
-            //获取文件存储路径
-            String path = ResourceUtils.getURL("classpath:").getPath();
-            File file = new File(path + File.separator + entity.getArticleImage());
-            //文件转byte[]
-            byte[] photo = FileCopyUtils.copyToByteArray(file);
-            //准备执行文件存储
-            entity.setArticleImage(photo);
-            //删除临时文件
-            file.delete();
-        } catch (Exception e) {
-            e.printStackTrace();
+        if(entity.getArticleImage()!=null) {
+            try {
+                //获取文件存储路径
+                String path = ResourceUtils.getURL("classpath:").getPath();
+                File file = new File(path + File.separator + entity.getArticleImage());
+                //文件转byte[]
+                byte[] photo = FileCopyUtils.copyToByteArray(file);
+                //准备执行文件存储
+                entity.setArticleImage(photo);
+                //删除临时文件
+                file.delete();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         dao.insert(entity);
     }
