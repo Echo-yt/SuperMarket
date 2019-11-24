@@ -69,14 +69,20 @@
                         <input class="form-control" type="text" name="articleName" value="" placeholder="标题"/>
                     </div>
                 </div>
+<%--                <div class="form-group">--%>
+<%--                    <label for="file" class="col-sm-4">入口图片--%>
+<%--                        <div class="col-sm-8 panel updatepanel">--%>
+<%--                            <div class="addbox"><span class="icon-add-50"></span></div>--%>
+<%--                            <input class="form-control" type="file" id="file" name="articleImage"--%>
+<%--                                   style="display: none"/>--%>
+<%--                        </div>--%>
+<%--                    </label>--%>
+<%--                </div>--%>
                 <div class="form-group">
-                    <label for="file" class="col-sm-4">入口图片
-                        <div class="col-sm-8 panel updatepanel">
-                            <div class="addbox"><span class="icon-add-50"></span></div>
-                            <input class="form-control" type="file" id="file" name="articleImage"
-                                   style="display: none"/>
-                        </div>
-                    </label>
+                    <label class="col-sm-4 control-label">入口图片</label>
+                    <div class="col-sm-8">
+                        <img src="../../../static/img/a3.jpg" width="200" height="200">
+                    </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-4 control-label">分组</label>
