@@ -77,4 +77,10 @@ public class ArticleController {
         }
         return name;
     }
+
+    @RequestMapping("article/upstate")
+    public String upstate(String id){
+        articleService.upstate(id);
+        return "redirect:/supermarket/article.do";
+    }
 }

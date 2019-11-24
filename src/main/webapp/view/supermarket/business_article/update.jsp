@@ -4,7 +4,7 @@
 <head>
     <title>文章添加页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
-    <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
+    <link href="${path}/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -14,47 +14,47 @@
     </div>
     <div class="ibox float-e-margins">
         <form action="${path }/supermarket/article/create.do" method="post" class="form-horizontal" role="form">
-            <input type="hidden" name="testId" value="${articleEntity.articleId}" />
+            <input type="hidden" name="testId" value="${entity.articleId}" />
             <fieldset>
                 <legend>文章基本信息</legend>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_host">标题</label>
+                    <label class="col-sm-2 control-label" for="articleName">标题</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleName" value="${articleEntity.articleName}"  placeholder="标题"/>
+                        <input class="form-control" type="text" id="articleName" name="articleName" value="${entity.articleName}"  placeholder="标题"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_name">入口图片</label>
+                    <label class="col-sm-2 control-label" for="articleImage">入口图片</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleImage" value="${articleEntity.articleImage}"  placeholder="入口图片"/>
+                        <input class="form-control" type="text" id="articleImage" name="articleImage" value="${entity.articleImage}"  placeholder="入口图片"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">分组</label>
+                    <label class="col-sm-2 control-label" for="articleGroup">分组</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleGroup" value="${articleEntity.articleGroup}" placeholder="分组"/>
+                        <input class="form-control" type="text" id="articleGroup" name="articleGroup" value="${entity.articleGroup}" placeholder="分组"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">文件简介</label>
+                    <label class="col-sm-2 control-label" for="articleDescript">文件简介</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDescript" value="${articleEntity.articleDescript}" placeholder="文件简介"/>
+                        <input class="form-control" type="text" id="articleDescript" name="articleDescript" value="${entity.articleDescript}" placeholder="文件简介"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">文章简介</label>
+                    <label class="col-sm-2 control-label" for="articleDetail">文章简介</label>
                     <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDetail" value="${articleEntity.articleDetail}" placeholder="文章简介"/>
+                        <input class="form-control" type="text" id="articleDetail" name="articleDetail" value="${entity.articleDetail}" placeholder="文章简介"/>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_host"></label>
+                    <label class="col-sm-2 control-label"></label>
                     <div class="col-sm-4">
                         <input type="submit" value="提交" class="btn btn-primary"/>
                     </div>
-                    <label class="col-sm-2 control-label" for="ds_host"></label>
+                    <label class="col-sm-2 control-label"></label>
                     <div class="col-sm-4">
                         <input type="reset" value="重置" class="btn btn-danger" id="resetForm"/>
                     </div>
