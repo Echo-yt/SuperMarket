@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>文章管理展示列表页面</title>
 
-    <!-- Bootstrap -->
-    <link href="../../../static/css/bootstrap.min.css" rel="stylesheet">
-
     <%@ include file="../../../common/jsp/header.jsp" %>
 </head>
 <body>
@@ -36,7 +33,7 @@
                 </div>
                 <div class="col-md-9">
                     <div class="col-md-3">
-                        <input style="width: auto;" class="form-control" id="search" name="articleName"
+                        <input style="width: auto;" class="form-control" id="articleName" name="articleName"
                                autocomplete="off"
                                value="${articleEntity.articleName}" type="text" placeholder="请输入文章标题"/>
                     </div>
@@ -48,10 +45,11 @@
                             <option>教你挑海鲜</option>
                         </select>
                     </div>
-                    <%--                <div class="col-md-3">--%>
-                    <%--                                    </div>--%>
-                    <%--                <div class="col-md-3 btn-group">--%>
-                    <%--                                    </div>--%>
+                    <div class="col-md-1 col-lg-offset-10">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" id="search">
+                            搜索
+                        </button>
+                    </div>
                     <div class="col-md-1 col-lg-offset-11">
                         <button type="button" class="btn btn-primary" data-toggle="modal" id="create"
                                 name="supermarket/business_article/create.jsp">
@@ -62,7 +60,7 @@
                 <!-- ------------按钮组 end------------ -->
                 <input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
                 <input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
-                <table class="table table-striped table-bordered table-hover table-condensed">
+                <table class="table table-bordered table-hover table-condensed">
                     <thead>
                     <tr>
                         <th><input type="checkbox" id="checkall"/></th>
@@ -76,17 +74,21 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:set var="vs"></c:set>
                     <c:forEach var="e" items="${page.list }" varStatus="v">
                         <tr>
                             <td><input type="checkbox" name="ids" value="${e.articleId}"/></td>
-                            <td>1</td>
+                            <td>${v.count}</td>
                             <td>${e.articleName}</td>
                             <td>${e.articleGroup}</td>
                             <td>999</td>
-                            <td>${e.articleState}</td>
+                            <td>${e.articleState==0?"未上架":e.articleState==1?"已上架":"已下架"}</td>
                             <td>推荐</td>
-                            <td>操作</td>
+                            <td>
+                                <c:if test="${e.articleState==0}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">上架</a></c:if>
+                                <c:if test="${e.articleState==1}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">下架</a></c:if>
+                                <c:if test="${e.articleState==2}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">删除</a></c:if>
+                                <a href="${path}/supermarket/article/delete.do?id=${e.articleId}">删除</a>
+                            </td>
                         </tr>
                     </c:forEach>
                     </tbody>
@@ -96,11 +98,6 @@
         </form>
     </div>
 </div>
-
-<!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
-<script src="../../../static/js/jquery.min.js"></script>
-<!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
-<script src="../../../static/js/bootstrap.min.js"></script>
 
 </body>
 </html>

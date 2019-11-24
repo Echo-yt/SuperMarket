@@ -19,6 +19,7 @@ import java.util.List;
  * @date 2019/11/22 15:26
  */
 @Service
+@Transactional(readOnly = true)
 public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
     @Autowired
     private ArticleDao articleDao;
@@ -59,4 +60,8 @@ public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
         dao.insert(entity);
     }
 
+    @Transactional(readOnly = false)
+    public void upstate(String id){
+        articleDao.upstate(id);
+    }
 }

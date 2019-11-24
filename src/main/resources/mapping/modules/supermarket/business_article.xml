@@ -56,5 +56,11 @@
 			#{id}
 		</foreach>
 	</delete>
+
+	<update id="upstate">
+		UPDATE ARTICLE SET
+		ARTICLE_STATE=ARTICLE_STATE+1
+		WHERE ARTICLE_ID=#{articleId}
+	</update>
 	
 </mapper>
