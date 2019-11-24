@@ -48,4 +48,6 @@ public class CommodityEntity extends BaseEntity<CommodityEntity> {
    String typeSecond ;
    //状态 0:未上架 1：已上架 2：已下架 3：删除 进入回收站
     Integer commodityState;
+    //安全库存
+    Integer commoditySafeStock;
 }
