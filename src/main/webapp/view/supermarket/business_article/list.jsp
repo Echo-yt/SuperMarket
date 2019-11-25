@@ -18,8 +18,8 @@
                 <div class="alert alert-success" role="alert">文章管理详细信息</div>
                 <div class="col-md-12">
                     <button type="button" class="btn btn-success " data-toggle="modal">全部 ${page.count}</button>
-                    <button type="button" class="btn btn-info" data-toggle="modal">已上架<a id="state1"></a></button>
-                    <button type="button" class="btn btn-info" data-toggle="modal">未上架<a id="state0"></a></button>
+                    <button type="button" class="btn btn-info" data-toggle="modal">已上架 ${state0}</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal">未上架 ${state1}</button>
                 </div>
                 <div class="col-md-3">
                     <button type="button" class="btn btn-success" data-toggle="modal" id="update"
@@ -104,21 +104,11 @@
     </div>
 </div>
 <script type="application/javascript">
-    $(function () {
-        $.ajax({
-            type: "POST",
-            url: "<%=path%>/supermarket/article/queryState.do",
-            data: 1,
-            success: function(n){
-                //返回数据后，删除勾选的数据
-                alert( "返回信息:" + n );
-                $("#state"+n).val=n;
-            },
-            error:function(){
-                alert("网络错误");
-            }
-        });
-    })
+// 点击搜索按钮，触发事件
+    $('#tosearch').click(function(){
+        $('#searchForm').submit();
+        document.location.href=root+'/supermarket/article/search.do';
+    });
 </script>
 </body>
 </html>

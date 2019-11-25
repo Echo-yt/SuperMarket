@@ -67,6 +67,10 @@ public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
 
     @Transactional(readOnly = false)
     public Integer queryState(Integer i){
-        return articleDao.queryState(i);
+        int a=0;
+        if (articleDao.queryState(i)!=null){
+            a=articleDao.queryState(i);
+        }
+        return a;
     }
 }

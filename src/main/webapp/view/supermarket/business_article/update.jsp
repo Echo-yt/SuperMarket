@@ -42,11 +42,14 @@
                     <label class="col-sm-2 control-label">分组</label>
                     <div class="col-sm-4">
                         <select style="width: auto;" class="form-control" type="text" name="articleGroup"
-                                value="${entity.articleGroup}">
-                            <option value="0">全部分类</option>
-                            <option value="1">海鲜大厨</option>
-                            <option value="2">营养课堂</option>
-                            <option value="3">教你挑海鲜</option>
+                                autocomplete="off" value="${entity.articleGroup}">
+                            <option value="全部分类">全部分类</option>
+                            <option value="生活小妙招" selected="${entity.articleGroup=='生活小妙招'?selected:null}">生活小妙招</option>
+                            <option value="鬼故事">鬼故事</option>
+                            <option value="海鲜大厨">海鲜大厨</option>
+                            <option value="营养课堂">营养课堂</option>
+                            <option value="教你挑海鲜">教你挑海鲜</option>
+                            <option value="不为人知的秘密">不为人知的秘密</option>
                         </select>
                     </div>
                 </div>

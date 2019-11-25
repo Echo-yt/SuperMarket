@@ -35,6 +35,8 @@ public class ArticleController {
         ModelAndView modelAndView=new ModelAndView("supermarket/business_article/list");
         Page<ArticleEntity> page=articleService.queryTest(entity,new Page<ArticleEntity>(request,response));
         modelAndView.addObject("page",page);
+        modelAndView.addObject("state0",articleService.queryState(0));
+        modelAndView.addObject("state1",articleService.queryState(1));
         return modelAndView;
     }
 
@@ -92,7 +94,4 @@ public class ArticleController {
         return "redirect:/supermarket/article.do";
     }
 
-    public Integer queryState(Integer i){
-        return articleService.queryState(i);
-    }
 }
