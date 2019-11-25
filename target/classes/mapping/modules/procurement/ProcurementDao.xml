@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.procurement.dao.ProcurementDao">
+
+	<select id="findList" resultType="com.zhg.javakc.modules.supermarket.procurement.entity.ProcurementEntity">
+select procurement_id as procurementId ,  procurement_instate as  procurementInstate ,  procurement_tostate as  procurementTostate , supplier_id as  supplierId ,procurement_money as  procurementMoney , procurement_createtime as procurementCreatetime
+from procurement where 1=1
+
+	</select>
+
+	<select id="search" resultType="com.zhg.javakc.modules.supermarket.procurement.entity.ProcurementEntity">
+		select procurement_id as procurementId ,  procurement_instate as  procurementInstate ,  procurement_tostate as  procurementTostate , supplier_id as  supplierId ,procurement_money as  procurementMoney , procurement_createtime as procurementCreatetime
+		from procurement where 1=1
+
+		<!-- 搜索采购单编号 -->
+		<if test="procurementId!='' and procurementId!=null" >
+			and procurement_id like '%' ||#{procurementId}||'%'
+		</if>
+
+		<!-- 搜索开始时间 -->
+		<if test="startTime!=null and startTime!=''">
+			AND procurement_createtime>=#{startTime}
+		</if>
+
+
+		<!-- 搜索截至时间 -->
+		<if test="endTime!=null and endTime!=''">
+			AND #{endTime} >=procurementCreatetime
+		</if>
+	</select>
+
+	<insert id="insert">
+         insert into procurement(procurement_id,supplier_id,procurement_instate,procurement_tostate,procurement_name,procurement_phone,procurement_detail,procurement_money,
+         procurement_creator,procurement_createtime,procurement_checker,procurement_checktime) values (#{procurementId},#{supplierId},#{procurementInstate},#{procurementTostate},
+         #{procurementName},#{procurementPhone},#{procurementDetail},#{procurementMoney},#{procurementCreator},#{procurementCreatetime},#{procurementChecker},#{procurementChecktime})
+
+	</insert>
+
+
+	<delete id="delete">
+	delete from procurement where procurement_id in
+
+	<foreach collection="array" item="id" open="(" separator="," close=")">
+		#{id}
+	</foreach>
+
+	</delete>
+	
+
+	
+</mapper>
