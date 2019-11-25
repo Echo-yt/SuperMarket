@@ -103,12 +103,12 @@
         </form>
     </div>
 </div>
-<script type="application/javascript">
+<%--<script type="application/javascript">
 // 点击搜索按钮，触发事件
     $('#tosearch').click(function(){
         $('#searchForm').submit();
         document.location.href=root+'/supermarket/article/search.do';
     });
-</script>
+</script>--%>
 </body>
 </html>

@@ -44,7 +44,7 @@
                         <select style="width: auto;" class="form-control" type="text" name="articleGroup"
                                 autocomplete="off" value="${entity.articleGroup}">
                             <option value="全部分类">全部分类</option>
-                            <option value="生活小妙招" selected="${entity.articleGroup=='生活小妙招'?selected:null}">生活小妙招</option>
+                            <option value="生活小妙招">生活小妙招</option>
                             <option value="鬼故事">鬼故事</option>
                             <option value="海鲜大厨">海鲜大厨</option>
                             <option value="营养课堂">营养课堂</option>
