@@ -28,6 +28,10 @@
 		<typeAlias type="com.zhg.javakc.modules.system.menu.entity.MenuEntity" alias="menu" />
 		<typeAlias type="com.zhg.javakc.modules.dictionary.entity.DictionaryEntity" alias="dictionary" />
 		<typeAlias type="com.zhg.javakc.modules.org.tree.entity.OrgtreeEntity" alias="orgtree" />
+		<typeAlias type="com.zhg.javakc.modules.supermarket.commodity_image.entity.ImageEntity"/>
+		<typeAlias type="com.zhg.javakc.modules.supermarket.business_article.entity.ArticleEntity"/>
+		<typeAlias type="com.zhg.javakc.modules.supermarket.commodity.entity.CommodityEntity"/>
+
 	</typeAliases>
 	
 </configuration>

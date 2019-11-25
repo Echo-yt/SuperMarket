@@ -4,6 +4,16 @@
 <head>
 	<title>测试展示列表页面</title>
 	<%@ include file="../../../common/jsp/header.jsp"%>
+	<script type="text/javascript">
+
+		//搜索完毕,回车触发事件
+		$('#searc').click(function(){
+			alert("test");
+		});
+
+
+
+	</script>
 </head>
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -26,13 +36,9 @@
 					<input class="form-control" id="sea" name="endTime"  type="text" placeholder="截止时间"/>
 				</div>
 
-				<div class="col-sm-1">
-					<div class="btn-group hidden-xs" role="group">
-						<button type="button" class="btn btn-primary" data-toggle="modal" id="search" name="">
-							<i  aria-hidden="true"></i>搜索
-						</button>
-					</div>
-				</div>
+				<button type="button" class="btn btn-primary" data-toggle="modal" id="searc" name="">
+					<i  aria-hidden="true"></i>搜索
+				</button>
 
 
 

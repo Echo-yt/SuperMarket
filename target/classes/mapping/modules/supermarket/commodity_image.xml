@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.commodity_image.dao.ImageDao">
+
+	<select id="findList" resultType="ImageEntity">
+		SELECT IMAGE_ID AS imageId,IMAGE_NAME AS imageName,IMAGE AS image
+		FROM IMAGE
+		<where>
+			<if test="imageName != null and imageName != ''">
+				AND IMAGE_NAME LIKE '%'||#{imageName}||'%'
+			</if>
+		</where>
+		ORDER BY IMAGE_ID DESC
+	</select>
+
+	<insert id="insert" parameterType="ImageEntity">
+		INSERT INTO IMAGE (IMAGE_ID,IMAGE_NAME,IMAGE)
+		VALUES (#{imageId},#{imageName},#{image})
+	</insert>
+
+	<select id="get" resultType="ImageEntity">
+        SELECT IMAGE_ID AS imageId,IMAGE_NAME AS imageName,IMAGE AS image
+        FROM IMAGE WHERE IMAGE_ID=#{0}
+    </select>
+
+	<update id="update">
+        UPDATE IMAGE SET IMAGE_NAME=#{IMAGEName},IMAGE=#{image}
+        WHERE IMAGE_ID=#{imageId}
+    </update>
+
+	<delete id="delete" >
+		DELETE FROM IMAGE WHERE IMAGE_ID IN
+		<foreach collection="array" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+	
+</mapper>

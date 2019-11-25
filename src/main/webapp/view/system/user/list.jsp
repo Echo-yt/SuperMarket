@@ -16,8 +16,8 @@
 	                	<div class="btn-group" role="group">
 	                		<shiro:hasPermission name="user:create">
 			                	<button type="button" class="btn btn-primary" data-toggle="modal" id="add" name="user/add.do">
-		                            <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
-		                        </button>
+								<i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
+							</button>
 	                        </shiro:hasPermission>
 	                        <shiro:hasPermission name="user:update">
 		                        <button type="button" class="btn btn-success" data-toggle="modal" id="update" name="user/view.do">
