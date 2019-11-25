@@ -4,7 +4,7 @@
 <head>
     <title>文章添加页面</title>
     <%@ include file="../../../common/jsp/header.jsp" %>
-    <link href="${path }/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
+    <link href="${path}/static/css/plugins/file-input/fileinput.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -13,48 +13,67 @@
                                      onclick="javascript:history.back();"/></div>
     </div>
     <div class="ibox float-e-margins">
-        <form action="${path }/supermarket/article/create.do" method="post" class="form-horizontal" role="form">
-            <input type="hidden" name="testId" value="${articleEntity.articleId}" />
+        <form action="${path}/supermarket/article/update.do" method="post" class="form-horizontal" role="form">
             <fieldset>
                 <legend>文章基本信息</legend>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_host">标题</label>
+                    <label class="col-sm-2 control-label">标题</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleName" value="${articleEntity.articleName}"  placeholder="标题"/>
+                        <input class="form-control" type="text" name="articleName" value="${entity.articleName}"
+                               placeholder="标题"/>
                     </div>
                 </div>
+                <%--                <div class="form-group">--%>
+                <%--                    <label for="file" class="col-sm-4">入口图片--%>
+                <%--                        <div class="col-sm-8 panel updatepanel">--%>
+                <%--                            <div class="addbox"><span class="icon-add-50"></span></div>--%>
+                <%--                            <input class="form-control" type="file" id="file" name="articleImage" value="${articleImage}"--%>
+                <%--                                   style="display: none"/>--%>
+                <%--                        </div>--%>
+                <%--                    </label>--%>
+                <%--                </div>--%>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_name">入口图片</label>
+                    <label class="col-sm-2 control-label">入口图片</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="articleImage" value="${articleEntity.articleImage}"  placeholder="入口图片"/>
+                        <img src="<%=path%>/static/img/a5.jpg" width="100" height="100">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">分组</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleGroup" value="${articleEntity.articleGroup}" placeholder="分组"/>
+                    <label class="col-sm-2 control-label">分组</label>
+                    <div class="col-sm-4">
+                        <select style="width: auto;" class="form-control" type="text" name="articleGroup"
+                                value="${entity.articleGroup}">
+                            <option value="0">全部分类</option>
+                            <option value="1">海鲜大厨</option>
+                            <option value="2">营养课堂</option>
+                            <option value="3">教你挑海鲜</option>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">文件简介</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDescript" value="${articleEntity.articleDescript}" placeholder="文件简介"/>
+                    <label class="col-sm-2 control-label">文件简介</label>
+                    <div class="col-sm-4">
+                        <input class="form-control" type="text" name="articleDescript" value="${entity.articleDescript}"
+                               placeholder="文件简介"/>
                     </div>
                 </div>
+            </fieldset>
+            <fieldset>
+                <legend>文章详情</legend>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_username">文章简介</label>
-                    <div class="col-sm-8">
-                        <input class="form-control" type="text" name="articleDetail" value="${articleEntity.articleDetail}" placeholder="文章简介"/>
+                    <div class="col-sm-12">
+                        <textarea id="articleDetail" class="form-control" type="text" name="articleDetail"
+                                  style="height: 200px">${entity.articleDetail}</textarea>
                     </div>
                 </div>
             </fieldset>
             <fieldset>
                 <div class="form-group">
-                    <label class="col-sm-2 control-label" for="ds_host"></label>
+                    <label class="col-sm-2 control-label"></label>
                     <div class="col-sm-4">
                         <input type="submit" value="提交" class="btn btn-primary"/>
                     </div>
-                    <label class="col-sm-2 control-label" for="ds_host"></label>
+                    <label class="col-sm-2 control-label"></label>
                     <div class="col-sm-4">
                         <input type="reset" value="重置" class="btn btn-danger" id="resetForm"/>
                     </div>
@@ -64,6 +83,5 @@
     </div>
 </div>
 </body>
-<script type="text/javascript" src="${path }/static/js/plugins/file-input/fileinput.min.js"></script>
-<%--<script type="text/javascript" src="./js/dictionary.js"></script>--%>
+<script type="text/javascript" src="${path}/static/js/plugins/file-input/fileinput.min.js"></script>
 </html>

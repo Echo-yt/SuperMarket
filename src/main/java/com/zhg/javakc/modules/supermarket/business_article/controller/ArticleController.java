@@ -58,8 +58,16 @@ public class ArticleController {
         return "redirect:/supermarket/article.do";
     }
 
+    @RequestMapping("article/deleteAll")
+    public String deleteAll(String[] ids){
+        articleService.delete(ids);
+        return "redirect:/supermarket/article.do";
+    }
+
     @RequestMapping("article/delete")
-    public String delete(String ids[]){
+    public String delete(String id){
+        String[] ids=new String[1];
+        ids[0]=id;
         articleService.delete(ids);
         return "redirect:/supermarket/article.do";
     }
@@ -82,5 +90,9 @@ public class ArticleController {
     public String upstate(String id){
         articleService.upstate(id);
         return "redirect:/supermarket/article.do";
+    }
+
+    public Integer queryState(Integer i){
+        return articleService.queryState(i);
     }
 }

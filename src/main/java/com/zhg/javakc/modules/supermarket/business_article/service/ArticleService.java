@@ -64,4 +64,9 @@ public class ArticleService extends BaseService<ArticleDao, ArticleEntity> {
     public void upstate(String id){
         articleDao.upstate(id);
     }
+
+    @Transactional(readOnly = false)
+    public Integer queryState(Integer i){
+        return articleDao.queryState(i);
+    }
 }

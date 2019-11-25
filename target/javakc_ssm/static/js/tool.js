@@ -16,6 +16,13 @@ $(function()
 		   $('#searchForm').submit();
 		}
 	});
+
+	//点击搜索按钮，触发事件
+	// $('#tosearch').click(function(){
+	// 	$('#searchForm').submit();
+	// 	// var url = root+$(this).attr('name');
+	// 	// $("#searchForm").attr('action', url).submit();
+	// });
 	
 	//点击展示页面添加按钮触发事件
 	$('#create').click(function()
@@ -40,7 +47,7 @@ $(function()
  			$("#searchForm").attr('action', url).submit();
 		}
  	});
- 	
+
  	//删除选中的节点数据
 	$('#delete').click(function()
 	{
@@ -118,6 +125,14 @@ $(function()
 			if(selected != 1)
 			{
 				swal({title:"温馨提示",text:"修改信息时,您只能选择一条记录修改?"});
+				return false;
+			}
+		}
+		else if(type == 'deleteAll')
+		{
+			if(selected == 0)
+			{
+				swal({title:"温馨提示",text:"删除信息时,您至少选择一条记录删除?"});
 				return false;
 			}
 		}
