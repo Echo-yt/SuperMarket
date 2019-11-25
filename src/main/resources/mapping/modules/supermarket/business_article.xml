@@ -11,12 +11,10 @@
 		ARTICLE_DESCRIPT AS articleDescript,
 		ARTICLE_RECOMME AS articleRecomme,
 		ARTICLE_DETAIL AS articleDetail
-		FROM ARTICLE
-		<where>
-			<if test="articleName != null and articleName != ''">
-				AND ARTICLE_NAME LIKE '%'||#{articleName}||'%'
-			</if>
-		</where>
+		FROM ARTICLE WHERE 3>ARTICLE_STATE
+		<if test="articleName != null and articleName != ''">
+			AND ARTICLE_NAME LIKE '%'||#{articleName}||'%'
+		</if>
 		ORDER BY ARTICLE_ID DESC
 	</select>
 
