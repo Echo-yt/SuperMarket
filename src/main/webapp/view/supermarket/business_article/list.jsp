@@ -46,7 +46,7 @@
                         </select>
                     </div>
                     <div class="col-md-1 col-lg-offset-10">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" id="search">
+                        <button type="button" class="form-control btn btn-primary" data-toggle="modal" id="tosearch">
                             搜索
                         </button>
                     </div>
@@ -84,10 +84,14 @@
                             <td>${e.articleState==0?"未上架":e.articleState==1?"已上架":"已下架"}</td>
                             <td>推荐</td>
                             <td>
-                                <c:if test="${e.articleState==0}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">上架</a></c:if>
+                                <a href="${path}/supermarket/article/view.do?id=${e.articleId}">编辑</a>
+                                <c:if test="${e.articleState==0}">
+                                    <a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">上架</a>
+                                    <a href="${path}/supermarket/article/delete.do?id=${e.articleId}">删除</a>
+                                </c:if>
                                 <c:if test="${e.articleState==1}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">下架</a></c:if>
-                                <c:if test="${e.articleState==2}"><a href="${path}/supermarket/article/upstate.do?id=${e.articleId}">删除</a></c:if>
-                                <a href="${path}/supermarket/article/delete.do?id=${e.articleId}">删除</a>
+                                <c:if test="${e.articleState==2}">
+                                    <a href="${path}/supermarket/article/delete.do?id=${e.articleId}">删除</a></c:if>
                             </td>
                         </tr>
                     </c:forEach>
