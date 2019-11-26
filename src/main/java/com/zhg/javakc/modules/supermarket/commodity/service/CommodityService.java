@@ -4,9 +4,13 @@ import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.service.BaseService;
 import com.zhg.javakc.modules.supermarket.commodity.dao.CommodityDao;
 import com.zhg.javakc.modules.supermarket.commodity.entity.CommodityEntity;
+import com.zhg.javakc.modules.supermarket.commodity_type.entity.TypeEntity;
 import com.zhg.javakc.modules.system.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Service
 public class CommodityService extends BaseService<CommodityDao, CommodityEntity> {
@@ -34,5 +38,9 @@ public class CommodityService extends BaseService<CommodityDao, CommodityEntity>
      */
     public void changeState(String commodityId,Integer commodityState){
         commodityDao.changeState(commodityId,commodityState);
+    }
+    //查询类型
+    public List<TypeEntity>queryType(){
+       return commodityDao.queryType();
     }
 }
