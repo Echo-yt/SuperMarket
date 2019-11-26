@@ -19,5 +19,20 @@ public class CommodityService extends BaseService<CommodityDao, CommodityEntity>
         page.setList(commodityDao.findList(entity));
         return page;
     }
-
+    /**
+     * 查询已经上架的商品
+     */
+    public Page<CommodityEntity> searchCommodity(Page<CommodityEntity> page, CommodityEntity entity) {
+        // 设置分页参数
+        entity.setPage(page);
+        // 执行分页查询
+        page.setList(commodityDao.searchList(entity));
+        return page;
+    }
+    /**
+     * 改变状态
+     */
+    public void changeState(String commodityId,Integer commodityState){
+        commodityDao.changeState(commodityId,commodityState);
+    }
 }

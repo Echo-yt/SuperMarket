@@ -42,8 +42,23 @@
         )
 	</insert>
 <!--    查询全部数据-->
-<select id="findList" resultMap="commodity">
-    SELECT <include refid="allColumn"></include> FROM COMMODITY WHERE COMMODITY_ID !='3'
+<select id="findList" resultMap="commodity" parameterType="Integer">
+
+    SELECT <include refid="allColumn"></include> FROM COMMODITY
+    <choose>
+        <when test='_parameter.commodityState=="0"'>
+            WHERE COMMODITY_STATE ='0'
+        </when>
+        <when test='_parameter.commodityState=="1"'>
+            WHERE COMMODITY_STATE ='1'
+        </when>
+        <when test='_parameter.commodityState=="2"'>
+            WHERE COMMODITY_STATE ='2'
+        </when>
+        <otherwise>
+            WHERE COMMODITY_STATE IN (0,1,2)
+        </otherwise>
+    </choose>
 </select>
 <!--   通过id查询-->
     <select id="get" resultMap="commodity">
@@ -62,4 +77,20 @@
             #{id}
         </foreach>
     </delete>
+    <!--条件查询-->
+    <select id="searchList" resultMap="commodity">
+        SELECT <include refid="allColumn"></include> FROM COMMODITY
+        <where>
+            <if test="null != commodityName and '' != commodityName">
+                and COMMODITY_NAME LIKE '%'||#{commodityName}||'%'
+            </if>
+            <if test="null != commodityId and '' != commodityId">
+                and COMMODITY_ID = #{commodityId}
+            </if>
+        </where>
+    </select>
+    <!--改变状态-->
+<update id="changeState">
+    UPDATE  COMMODITY SET COMMODITY_STATE=#{arg1} WHERE COMMODITY_ID=#{arg0}
+</update>
 </mapper>
