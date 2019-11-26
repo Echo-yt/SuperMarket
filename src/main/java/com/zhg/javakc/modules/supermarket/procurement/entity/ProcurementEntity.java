@@ -1,9 +1,11 @@
 package com.zhg.javakc.modules.supermarket.procurement.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.zhg.javakc.base.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -42,6 +44,7 @@ public class ProcurementEntity extends BaseEntity<ProcurementEntity> {
     private String procurementCreator;
 
     /*创建时间*/
+
     private Date procurementCreatetime;
 
     /*审核人*/
@@ -52,9 +55,11 @@ public class ProcurementEntity extends BaseEntity<ProcurementEntity> {
 
 
     /*搜索开始时间*/
+
     private Date startTime;
 
 
     /*搜索截至时间*/
+
     private Date endTime;
 }

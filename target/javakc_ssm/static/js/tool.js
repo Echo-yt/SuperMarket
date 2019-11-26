@@ -23,12 +23,7 @@ $(function()
 		$('#searchForm').submit();
 	});
 
-	//点击搜索按钮，触发事件
-	// $('#tosearch').click(function(){
-	// 	$('#searchForm').submit();
-	// 	// var url = root+$(this).attr('name');
-	// 	// $("#searchForm").attr('action', url).submit();
-	// });
+
 
 	
 	//点击展示页面添加按钮触发事件

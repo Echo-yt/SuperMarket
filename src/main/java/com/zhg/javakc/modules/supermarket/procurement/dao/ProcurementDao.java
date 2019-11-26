@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface ProcurementDao extends BaseDao<ProcurementEntity>{
 
-    public List<ProcurementEntity> search(ProcurementEntity procurementEntity);
+
 
 }

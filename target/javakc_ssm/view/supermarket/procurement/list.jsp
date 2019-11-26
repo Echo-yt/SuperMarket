@@ -4,24 +4,17 @@
 <head>
 	<title>测试展示列表页面</title>
 	<%@ include file="../../../common/jsp/header.jsp"%>
-	<script type="text/javascript">
-
-		//搜索完毕,回车触发事件
-		$('#searc').click(function(){
-			alert("test");
-		});
 
 
-
-	</script>
 </head>
 <body>
+
 <div class="wrapper wrapper-content animated fadeInRight">
 	<div class="ibox float-e-margins">
-		<form id="searchForm" action="${path }/procurement/search.do">
+		<form id="searchForm" action="${path }/procurement/query.do">
 			<div class="col-sm-12">
 				<!-- ------------按钮组 start------------ -->
-				<div class="alert alert-success" role="alert">测试详细信息</div>
+				<div class="alert alert-success" role="alert">采购单信息</div>
 
 				<div class="col-sm-2">
 					<input class="form-control" id="se" name="procurementId" value="${procurementEntity.procurementId }" type="text" placeholder="请输入采购单编号"/>
@@ -30,21 +23,26 @@
 					<input class="form-control" id="sear" name="testName" value="${testEntity.testName }" type="text" placeholder="全部供应商"/>
 				</div>
 				<div class="col-sm-2">
-					<input class="form-control" id="seac" name="startTime" type="text" placeholder="开始时间"/>
+					<input class="form-control" id="seac" name="startTime" type="date" placeholder="开始时间"/>
 				</div>
 				<div class="col-sm-2">
-					<input class="form-control" id="sea" name="endTime"  type="text" placeholder="截止时间"/>
+					<input class="form-control" id="sea" name="endTime"  type="date" placeholder="截止时间"/>
 				</div>
 
-				<button type="button" class="btn btn-primary" data-toggle="modal" id="searc" name="">
-					<i  aria-hidden="true"></i>搜索
-				</button>
+				<div class="col-sm-1">
+					<button type="button" class="btn btn-primary"  id="tosearch" name="" >
+						搜索
+					</button>
+
+				</div>
+
+
 
 
 
 				<div class="col-sm-3">
 					<div class="btn-group hidden-xs" role="group">
-						<button type="button"  data-toggle="modal" id="create" name="supermarket/procurement/creat.jsp">
+						<button type="button"  data-toggle="modal" id="create" name="supermarket/procurement/create.jsp">
 							<i  aria-hidden="true"></i>进货
 						</button>
 						<button type="button"  data-toggle="modal" id="updat" name="test/view.do">
@@ -90,6 +88,7 @@
 							<td>${e.procurementId}</td>
 							<td>${e.supplierId}</td>
 							<td>${e.procurementMoney}</td>
+
 							<td><fmt:formatDate value="${e.procurementCreatetime}" pattern="yyyy-MM-dd"></fmt:formatDate></td>
 
 							<td>
@@ -106,5 +105,19 @@
 		</form>
 	</div>
 </div>
+
+
+<script type="application/javascript">
+
+    $(document).ready(function() {
+        $("#tosearch").click(function() {
+            $('#searchForm').submit();
+        });
+    });
+
+
+
+</script>
+
 </body>
 </html>

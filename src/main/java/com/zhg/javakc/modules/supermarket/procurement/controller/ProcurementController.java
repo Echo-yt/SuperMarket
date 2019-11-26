@@ -36,19 +36,16 @@ public class ProcurementController {
 
     }
 
-    @RequestMapping("/search")
-    public String search(ProcurementEntity procurementEntity){
 
-        System.out.println("controller  ++++++");
 
-        procurementService.search(procurementEntity);
 
-        return "supermarket/procurement/list";
-    }
 
 
     @RequestMapping("/save")
     public String save(ProcurementEntity procurementEntity){
+
+
+        System.out.println("inserttime:"+procurementEntity.getProcurementCreatetime());
        // procurementEntity.setProcurementId(CommonUtil.uuid());
         procurementService.save(procurementEntity);
 

@@ -19,24 +19,23 @@ public class ProcurementService extends BaseService<ProcurementDao, ProcurementE
 
     public Page<ProcurementEntity> query(ProcurementEntity procurementEntity, Page<ProcurementEntity> page){
 
+        System.out.println("id:"+procurementEntity.getProcurementId());
+
+        System.out.println("starttime:"+ procurementEntity.getStartTime());
+        System.out.println("endtime:"+ procurementEntity.getEndTime());
+
 
         List<ProcurementEntity> procurementList= procurementDao.findList(procurementEntity);
+        System.out.println("procurementList"+procurementList.get(0).getProcurementCreatetime());
+
         page.setList(procurementList);
         return page ;
     }
 
-    public List<ProcurementEntity> search(ProcurementEntity procurementEntity){
-        System.out.println("进入service     search");
 
 
 
-        List<ProcurementEntity> procurementList= procurementDao.search(procurementEntity);
-        System.out.println("procurementList"+procurementList);
 
-
-
-        return procurementList ;
-    }
 
 
 
