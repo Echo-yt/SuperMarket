@@ -235,33 +235,6 @@
 
 
 	 </div>
-
-
-
-	 <script>
-
-
-		 $('#procurementId').click(function(){
-			 var originStr = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
-					 originChar = '0123456789abcdef',
-					 len = originChar.length;
-
-			 $("#procurementId").val(originStr.replace(/x/g, function(match) {
-				 return originChar.charAt(Math.floor(Math.random() * len))
-			 }));
-
-		 });
-
-
-
-
-
-
-
-
-
-
-	 </script>
 	</body>
 
 
