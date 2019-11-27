@@ -14,6 +14,7 @@
     </div>
     <div class="ibox float-e-margins">
         <form action="${path}/supermarket/article/update.do" method="post" class="form-horizontal" role="form">
+            <input type="hidden" name="articleId" id="articleId" value="${entity.articleId}">
             <fieldset>
                 <legend>文章基本信息</legend>
                 <div class="form-group">

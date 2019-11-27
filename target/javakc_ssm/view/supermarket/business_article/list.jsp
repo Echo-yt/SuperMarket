@@ -18,8 +18,8 @@
                 <div class="alert alert-success" role="alert">文章管理详细信息</div>
                 <div class="col-md-12">
                     <button type="button" class="btn btn-success " data-toggle="modal">全部 ${page.count}</button>
-                    <button type="button" class="btn btn-info" data-toggle="modal">已上架 ${page.count}</button>
-                    <button type="button" class="btn btn-info" data-toggle="modal">未上架 ${page.count}</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal">已上架 ${state0}</button>
+                    <button type="button" class="btn btn-info" data-toggle="modal">未上架 ${state1}</button>
                 </div>
                 <div class="col-md-3">
                     <button type="button" class="btn btn-success" data-toggle="modal" id="update"
@@ -103,5 +103,12 @@
         </form>
     </div>
 </div>
+<%--<script type="application/javascript">
+// 点击搜索按钮，触发事件
+    $('#tosearch').click(function(){
+        $('#searchForm').submit();
+        document.location.href=root+'/supermarket/article/search.do';
+    });
+</script>--%>
 </body>
 </html>

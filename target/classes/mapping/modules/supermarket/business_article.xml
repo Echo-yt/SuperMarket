@@ -61,7 +61,7 @@
 		WHERE ARTICLE_ID=#{articleId}
 	</update>
 
-	<select id="get" resultType="Integer">
+	<select id="queryState" resultType="Integer">
 		SELECT COUNT(1) FROM ARTICLE WHERE ARTICLE_STATE=#{i}
 	</select>
 

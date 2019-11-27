@@ -3,6 +3,7 @@ package com.zhg.javakc.modules.supermarket.business_article.entity;
 import com.zhg.javakc.base.entity.BaseEntity;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author yang
@@ -11,6 +12,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
+@ToString
 public class ArticleEntity extends BaseEntity<ArticleEntity> {
     /**
      * 'id'
