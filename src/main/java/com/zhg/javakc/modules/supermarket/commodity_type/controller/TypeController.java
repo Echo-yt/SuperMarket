@@ -16,9 +16,4 @@ import javax.jws.WebParam;
 public class TypeController {
     @Autowired
     TypeService typeService;
-    @RequestMapping("queryType")
-    public void queryType(String typeFirst, ModelMap modelMap) {
-        modelMap.put("secondList", typeService.queryType(typeFirst));
-    }
-
 }
