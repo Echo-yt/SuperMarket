@@ -21,13 +21,15 @@
     <!-- druid数据源 -->
     <druid.version>1.1.19</druid.version>
     <!-- 驱动包版本 -->
-    <oracle.version>11.2.0.1.0</oracle.version>
-    <mysql.version>5.1.30</mysql.version>
+    <oracle.version>11.2.0</oracle.version>
+    <mysql.version>5.1.48</mysql.version>
     <!-- 日志文件管理包版本 -->
     <slf4j.version>1.7.7</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
     <!-- shiro版本号 -->
     <shiro.version>1.2.3</shiro.version>
+    <!-- lombok版本 -->
+    <lombok.version>1.16.18</lombok.version>
     <!-- jackson版本 -->
     <jackson.version>2.9.4</jackson.version>
     <redis.version>2.9.0</redis.version>
@@ -150,6 +152,12 @@
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc6</artifactId>
       <version>${oracle.version}</version>
+    </dependency>
+    <!--lombok 版本-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
     </dependency>
     <!-- 日志包导入 -->
     <dependency>
