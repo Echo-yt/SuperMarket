@@ -15,11 +15,9 @@
         <form id="searchForm" action="">
             <div class="col-md-12">
                 <!-- ------------按钮组 start------------ -->
-                <div class="alert alert-success" role="alert">文章管理详细信息</div>
-                <div class="col-md-12">
-                    <button type="button" class="btn btn-success " data-toggle="modal">全部 ${page.count}</button>
-                </div>
-                <div class="col-md-3">
+                <div class="alert alert-success" role="alert">标签管理详细信息</div>
+                <div class="col-md-8">
+                    <div class="col-md-6">
                     <button type="button" class="btn btn-success" data-toggle="modal" id="update"
                             name="supermarket/label/view.do">
                         <i class="glyphicon glyphicon-pencil" aria-hidden="true"></i>修改
@@ -28,23 +26,23 @@
                             name="supermarket/label/deleteAll.do">
                         <i class="glyphicon glyphicon-trash" aria-hidden="true"></i>批量操作
                     </button>
-                </div>
-                <div class="col-md-6">
-                    <div class="col-md-5">
-                        <input style="width: auto;" class="form-control" id="articleName" name="labelName"
-                               autocomplete="off"
-                               value="${labelEntity.labelName}" type="text" placeholder="请输入文章标题,回车搜索"/>
                     </div>
-                <div class="col-md-1 col-lg-offset-11">
+                    <div class="col-md-6">
+                    <input style="width: auto;" class="form-control" id="articleName" name="labelName"
+                           autocomplete="off"
+                           value="${labelEntity.labelName}" type="text" placeholder="请输入标签标题,回车搜索"/>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-offset-8">
                     <button type="button" class="btn btn-primary" data-toggle="modal" id="create"
-                            name="supermarket/business_label/create.jsp">
+                            name="supermarket/commodity_label/create.jsp">
                         <i class="glyphicon glyphicon-plus" aria-hidden="true"></i>添加
                     </button>
                 </div>
                 <!-- ------------按钮组 end------------ -->
                 <input id="pageNo" name="pageNo" type="hidden" value="${page.pageNo}"/>
                 <input id="pageSize" name="pageSize" type="hidden" value="${page.pageSize}"/>
-                <table class="table table-bordered table-hover table-condensed">
+                <table style="width: 100%" class="table table-bordered table-hover table-condensed">
                     <thead>
                     <tr>
                         <th><input type="checkbox" id="checkall"/></th>
@@ -63,14 +61,7 @@
                             <td>${e.labelDescript}</td>
                             <td>
                                 <a href="${path}/supermarket/label/view.do?ids=${e.labelId}">编辑</a>
-                                <c:if test="${e.articleState==0}">
-                                    <a href="${path}/supermarket/label/upstate.do?id=${e.labelId}">上架</a>
-                                    <a href="${path}/supermarket/label/delete.do?id=${e.labelId}">删除</a>
-                                </c:if>
-                                <c:if test="${e.labelState==1}"><a
-                                        href="${path}/supermarket/label/upstate.do?id=${e.labelId}">下架</a></c:if>
-                                <c:if test="${e.articleState==2}">
-                                    <a href="${path}/supermarket/label/delete.do?id=${e.labelId}">删除</a></c:if>
+                                <a href="${path}/supermarket/label/delete.do?id=${e.labelId}">删除</a>
                             </td>
                         </tr>
                     </c:forEach>
