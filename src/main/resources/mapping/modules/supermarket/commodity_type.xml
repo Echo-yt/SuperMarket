@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.commodity_type.dao.TypeDao">
+    <resultMap id="type" type="typeEntity">
+        <id property="typeFirst" column="TYPE_FIRST" />
+        <id property="typeSecond" column="TYPE_SECOND" />
+    </resultMap>
+    <!--查询类型-->
+    <select id="queryAll" resultMap="type">
+        SELECT DISTINCT TYPE_FIRST FROM TYPE
+    </select>
+<!--查询typeSecond-->
+    <select id="queryType" resultMap="type">
+        SELECT  TYPE_SECOND FROM TYPE WHERE TYPE_FIRST=#{typeFirst}
+    </select>
+</mapper>

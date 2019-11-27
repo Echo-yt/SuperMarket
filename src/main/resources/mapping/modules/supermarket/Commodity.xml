@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.commodity.dao.CommodityDao">
+    <resultMap id="commodity" type="commodityEntity">
+        <id property="commodityId" column="COMMODITY_ID"/>
+        <result property="commodityName" column="COMMODITY_NAME"/>
+        <result property="commodityPrice" column="COMMODITY_PRICE"/>
+        <result property="commodityDetail" column="COMMODITY_DETAIL"/>
+        <result property="commodityKeyword" column="COMMODITY_KEYWORD"/>
+        <result property="commodityRprice" column="COMMODITY_RPRICE"/>
+        <result property="commodityCprice" column="COMMODITY_CPRICE"/>
+        <result property="commoditySupport" column="COMMODITY_SUPPORT"/>
+        <result property="supplierId" column="SUPPLIER_ID"/>
+        <result property="commodityBrand" column="COMMODITY_BRAND"/>
+        <result property="commodityPlace" column="COMMODITY_PLACE"/>
+        <result property="commodityWater" column="COMMODITY_WATER"/>
+        <result property="commodityContent" column="COMMODITY_CONTENT"/>
+        <result property="commodityStorage" column="COMMODITY_STORAGE"/>
+        <result property="commodityQuality" column="COMMODITY_QUALITY"/>
+        <result property="commodityPackage" column="COMMODITY_PACKAGE"/>
+        <result property="commodityCompany" column="COMMODITY_COMPANY"/>
+        <result property="articleId" column="ARTICLE_ID"/>
+        <result property="typeFirst" column="TYPE_FIRST"/>
+        <result property="typeSecond" column="TYPE_SECOND"/>
+        <result property="commodityState" column="COMMODITY_STATE"/>
+    </resultMap>
+
+    <sql id="allColumn">
+    	COMMODITY_ID,COMMODITY_NAME,COMMODITY_PRICE,COMMODITY_DETAIL,COMMODITY_KEYWORD,COMMODITY_RPRICE,COMMODITY_CPRICE,COMMODITY_SUPPORT,SUPPLIER_ID
+		COMMODITY_BRAND,COMMODITY_PLACE,COMMODITY_WATER,COMMODITY_CONTENT,COMMODITY_STORAGE,COMMODITY_QUALITY,COMMODITY_PACKAGE,COMMODITY_COMPANY,ARTICLE_ID,
+		TYPE_FIRST,TYPE_SECOND,COMMODITY_STATE
+    </sql>
+    <!--    新增-->
+    <insert id="insert">
+		INSERT INTO COMMODITY (COMMODITY_ID,COMMODITY_NAME,COMMODITY_PRICE,COMMODITY_DETAIL,COMMODITY_KEYWORD,COMMODITY_RPRICE,COMMODITY_CPRICE,
+         COMMODITY_SUPPORT,SUPPLIER_ID, COMMODITY_BRAND,COMMODITY_PLACE,COMMODITY_WATER,COMMODITY_CONTENT,
+         COMMODITY_STORAGE,COMMODITY_QUALITY,COMMODITY_PACKAGE,COMMODITY_COMPANY,ARTICLE_ID,TYPE_FIRST,TYPE_SECOND,COMMODITY_STATE
+		)
+        VALUES(#{commodityId},#{commodityName},#{commodityPrice},#{commodityDetail},#{commodityKeyword},#{commodityRprice},#{commodityCprice},
+        #{commoditySupport},#{supplierId},#{commodityBrand},#{commodityPlace},#{commodityWater},#{commodityContent},
+        #{commodityStorage},#{commodityQuality},#{commodityPackage},#{commodityCompany},#{articleId},#{typeFirst},#{typeSecond},#{commodityState}
+        )
+	</insert>
+    <!--    查询全部数据-->
+    <select id="findList" resultMap="commodity" parameterType="Integer">
+
+        SELECT <include refid="allColumn"></include> FROM COMMODITY
+        <choose>
+            <when test='_parameter.commodityState=="0"'>
+                WHERE COMMODITY_STATE ='0'
+            </when>
+            <when test='_parameter.commodityState=="1"'>
+                WHERE COMMODITY_STATE ='1'
+            </when>
+            <when test='_parameter.commodityState=="2"'>
+                WHERE COMMODITY_STATE ='2'
+            </when>
+            <otherwise>
+                WHERE COMMODITY_STATE IN (0,1,2)
+            </otherwise>
+        </choose>
+    </select>
+    <!--   通过id查询-->
+    <select id="get" resultMap="commodity">
+        SELECT <include refid="allColumn"></include> FROM COMMODITY WHERE COMMODITY_ID=#{id}
+    </select>
+    <!--修改-->
+    <update id="update">
+        UPDATE COMMODITY SET COMMODITY_ID=#{commodityId},COMMODITY_NAME=#{commodityName},COMMODITY_PRICE=#{commodityPrice} WHERE COMMODITY_ID=#{commodityId}
+    </update>
+    <!--删除-->
+    <delete id="delete" parameterType="String">
+        <![CDATA[
+	       /*DELETE FROM COMMODITY WHERE COMMODITY_ID IN*/
+	       UPDATE COMMODITY SET COMMODITY=3 WHERE  COMMODITY_ID IN
+	    ]]>
+        <foreach collection="array" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    <!--条件查询-->
+    <select id="searchList" resultMap="commodity">
+        SELECT <include refid="allColumn"></include> FROM COMMODITY
+        <where>
+            <if test="null != commodityName and '' != commodityName">
+                and COMMODITY_NAME LIKE '%'||#{commodityName}||'%'
+            </if>
+            <if test="null != commodityId and '' != commodityId">
+                and COMMODITY_ID = #{commodityId}
+            </if>
+            <if test="null != typeFirst and '' != typeFirst and  '全部分类'!=typeFirst">
+                and TYPE_FIRST = #{typeFirst}
+            </if>
+            <if test="null != typeSecond and '' != typeSecond and  '全部分类'!=typeSecond">
+                and TYPE_SECOND = #{typeSecond}
+            </if>
+        </where>
+    </select>
+    <!--改变状态-->
+
+    <update id="changeState">
+    UPDATE  COMMODITY SET COMMODITY_STATE=#{arg1} WHERE COMMODITY_ID=#{arg0}
+</update>
+
+</mapper>
