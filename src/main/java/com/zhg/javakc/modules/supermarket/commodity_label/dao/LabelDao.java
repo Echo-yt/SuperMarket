@@ -1,7 +1,7 @@
-package com.zhg.javakc.modules.supermarket.commidity_label.dao;
+package com.zhg.javakc.modules.supermarket.commodity_label.dao;
 
 import com.zhg.javakc.base.dao.BaseDao;
-import com.zhg.javakc.modules.supermarket.commidity_label.entity.LabelEntity;
+import com.zhg.javakc.modules.supermarket.commodity_label.entity.LabelEntity;
 
 /**
  * @author yang

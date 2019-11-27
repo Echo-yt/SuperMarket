@@ -1,8 +1,8 @@
-package com.zhg.javakc.modules.supermarket.commidity_label.controller;
+package com.zhg.javakc.modules.supermarket.commodity_label.controller;
 
 import com.zhg.javakc.base.page.Page;
-import com.zhg.javakc.modules.supermarket.commidity_label.entity.LabelEntity;
-import com.zhg.javakc.modules.supermarket.commidity_label.service.LabelService;
+import com.zhg.javakc.modules.supermarket.commodity_label.entity.LabelEntity;
+import com.zhg.javakc.modules.supermarket.commodity_label.service.LabelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

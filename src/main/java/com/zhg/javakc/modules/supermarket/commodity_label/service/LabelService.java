@@ -1,9 +1,9 @@
-package com.zhg.javakc.modules.supermarket.commidity_label.service;
+package com.zhg.javakc.modules.supermarket.commodity_label.service;
 
 import com.zhg.javakc.base.page.Page;
 import com.zhg.javakc.base.service.BaseService;
-import com.zhg.javakc.modules.supermarket.commidity_label.dao.LabelDao;
-import com.zhg.javakc.modules.supermarket.commidity_label.entity.LabelEntity;
+import com.zhg.javakc.modules.supermarket.commodity_label.dao.LabelDao;
+import com.zhg.javakc.modules.supermarket.commodity_label.entity.LabelEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.zhg.javakc.modules.supermarket.commidity_label.entity;
+package com.zhg.javakc.modules.supermarket.commodity_label.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
 import lombok.Getter;
