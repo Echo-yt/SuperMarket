@@ -15,7 +15,7 @@
     <div class="ibox float-e-margins">
         <form action="${path}/supermarket/label/insert.do" method="post" class="form-horizontal" role="form">
             <fieldset>
-                <legend class="legend">文章基本信息</legend>
+                <legend class="legend">新增标签</legend>
                 <div class="classDivBlank"></div>
                 <%--                <div style="border: 1px solid slateblue; width: 100px;height: 30px">文章基本信息</div>--%>
                 <div class="form-group">

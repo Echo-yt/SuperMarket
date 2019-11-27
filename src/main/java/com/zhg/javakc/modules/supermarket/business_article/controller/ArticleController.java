@@ -57,7 +57,6 @@ public class ArticleController {
     @RequestMapping("article/update")
     public String update(ArticleEntity entity){
         articleService.update(entity);
-        System.out.println("修改中。。。。。"+entity);
         return "redirect:/supermarket/article.do";
     }
 

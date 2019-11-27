@@ -35,4 +35,5 @@ public class LabelService extends BaseService<LabelDao, LabelEntity> {
 
         return page;
     }
+
 }

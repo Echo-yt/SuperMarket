@@ -13,10 +13,10 @@
                                      onclick="javascript:history.back();"/></div>
     </div>
     <div class="ibox float-e-margins">
-        <form action="${path}/supermarket/label/insert.do" method="post" class="form-horizontal" role="form">
+        <form action="${path}/supermarket/label/update.do" method="post" class="form-horizontal" role="form">
             <input type="hidden" name="labelId" value="${entity.labelId}">
             <fieldset>
-                <legend class="legend">文章基本信息</legend>
+                <legend class="legend">编辑标签</legend>
                 <div class="classDivBlank"></div>
                 <%--                <div style="border: 1px solid slateblue; width: 100px;height: 30px">文章基本信息</div>--%>
                 <div class="form-group">
@@ -29,7 +29,7 @@
                     <label class="col-sm-2 control-label">标签描述</label>
                     <div class="col-sm-4">
                         <textarea class="form-control" style="height: 200px;width: 100%"
-                                  name="labelDescript" value="${entity.labelDescript}" placeholder="文件简介"></textarea>
+                                  name="labelDescript"  placeholder="文件简介">${entity.labelDescript}</textarea>
                     </div>
                 </div>
             </fieldset>
