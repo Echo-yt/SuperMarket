@@ -1,8 +1,13 @@
 package com.zhg.javakc.modules.supermarket.commodity.entity;
 
 import com.zhg.javakc.base.entity.BaseEntity;
+import com.zhg.javakc.modules.supermarket.commodity_type.entity.TypeEntity;
 import lombok.Getter;
 import lombok.Setter;
+
+import javax.persistence.ManyToOne;
+import java.util.List;
+
 @Getter
 @Setter
 public class CommodityEntity extends BaseEntity<CommodityEntity> {
@@ -42,10 +47,10 @@ public class CommodityEntity extends BaseEntity<CommodityEntity> {
     String commodityCompany;
     //文章id
     String articleId;
-    //一级分类
+   //分类
+    List<TypeEntity> typeList;
     String typeFirst;
-    //二级分类
-   String typeSecond ;
+    String typeSecond;
    //状态 0:未上架 1：已上架 2：已下架 3：删除 进入回收站
     Integer commodityState;
     //安全库存

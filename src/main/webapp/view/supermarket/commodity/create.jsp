@@ -10,6 +10,7 @@
 		  class="form-horizontal" role="form">
         <div >
             <h2 class="offset2">基本信息</h2>
+            <input type="hidden" class="col-sm-8 form-control" id="commodityState" name="commodityState" value="0">
             <div class="form-group col-sm-6">
                 <label class="col-sm-4 control-label" for="commodityName">商品名称：</label>
                 <input type="text" class="col-sm-8 form-control" id="commodityName" name="commodityName">

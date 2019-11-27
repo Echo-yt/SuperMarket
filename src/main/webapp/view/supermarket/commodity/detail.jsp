@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>修改商品信息</title>
+		<title>商品详细信息</title>
 		<%@ include file="../../../common/jsp/header.jsp"%>
 	</head>
 	<body>
@@ -98,14 +98,6 @@
         <div class="col-sm-10">
             <h2 class="offset2">文章</h2>
         </div>
-
-		<div class="col-sm-4">
-			<input type="submit" value="提交" class="btn btn-primary"/>
-		</div>
-		<label class="col-sm-2 control-label"></label>
-		<div class="col-sm-4">
-			<input type="reset" value="重置" class="btn btn-danger"/>
-		</div>
 	</form>
 	</body>
 	<script type="text/javascript" src="${path }/view/system/user/js/user.js"></script>

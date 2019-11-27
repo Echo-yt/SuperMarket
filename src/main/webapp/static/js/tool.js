@@ -17,12 +17,14 @@ $(function()
 		}
 	});
 
-	//点击搜索按钮，触发事件
-	// $('#tosearch').click(function(){
-	// 	$('#searchForm').submit();
-	// 	// var url = root+$(this).attr('name');
-	// 	// $("#searchForm").attr('action', url).submit();
-	// });
+
+	//搜索完毕,回车触发事件
+	$('#searc').click(function(){
+		$('#searchForm').submit();
+	});
+
+
+
 	
 	//点击展示页面添加按钮触发事件
 	$('#create').click(function()
