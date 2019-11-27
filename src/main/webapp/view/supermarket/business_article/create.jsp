@@ -95,7 +95,7 @@
                         <input class="form-control" type="text" name="articleName" value="" placeholder="标题"/>
                     </div>
                 </div>
-                <div class="form-group">
+<%--                <div class="form-group">
                     <label for="file" class="col-sm-4">入口图片
                         <div class="col-sm-8 panel updatepanel">
                             <div class="addbox"><span class="icon-add-50"></span></div>
@@ -103,7 +103,7 @@
                                    style="display: none"/>
                         </div>
                     </label>
-                </div>
+                </div>--%>
                 <div class="form-group">
                     <label class="col-sm-2 control-label">入口图片</label>
                     <div class="col-sm-4">
