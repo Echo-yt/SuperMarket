@@ -23,13 +23,6 @@ $(function()
 		var url = $(this).attr('name');
 		document.location.href=root+'view/'+url;
 	});
-
-	//点击展示页面添加按钮触发事件
-	$('#details').click(function()
-	{
-		var url = $(this).attr('name');
-		document.location.href=root+'view/'+url;
-	});
 	
 	//点击展示页面添加按钮触发事件
 	$('#add').click(function()
