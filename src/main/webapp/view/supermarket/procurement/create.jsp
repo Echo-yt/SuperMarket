@@ -19,7 +19,7 @@
 	</head>
 	<body>
 	 <div class="wrapper wrapper-content animated fadeInRight">
-		 <form action="${path }/procurement/save.do" method="post" class="form-horizontal" role="form">
+		 <form action="${path }/procure/save.do" method="post" class="form-horizontal" role="form">
 
 			 <div class="row">
 
@@ -29,7 +29,7 @@
 						 <div class="form-group">
 							 <label class="col-sm-3 control-label" >采购单编号:</label>
 							 <div class="col-sm-5">
-								 <input class="form-control" id="procurementId" name="procurementId" type="text" value=""/>
+								 <input class="form-control" id="procurementId" name="procurementId" type="text" placeholder="点击获取编号"/>
 							 </div>
 						 </div>
 					 </div>
@@ -58,7 +58,7 @@
 							 <div class="form-group">
 								 <label class="col-sm-3 control-label" >采购人：</label>
 								 <div class="col-sm-5">
-									 <input class="form-control"  name="procurementName" type="text" placeholder=""/>
+									 <input class="form-control"  name="procurementName" type="text" />
 								 </div>
 							 </div>
 						 </div>
@@ -106,10 +106,6 @@
 
 
 			 <div class="container">
-
-
-
-
 				 <table class="table table-bordered ">
 					 <thead>
 					 <tr class="active">
@@ -129,42 +125,31 @@
 					 <tbody>
 
 					 <tr>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
+						 <td>1</td>
+						 <td>冷冻虾</td>
+						 <td>001</td>
+						 <td>盒</td>
+						 <td>2</td>
+						 <td>20</td>
+						 <td>0.9</td>
+						 <td>40</td>
 					 </tr>
 
 					 <tr>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
+						 <td>1</td>
+						 <td>螃蟹</td>
+						 <td>001</td>
+						 <td>盒</td>
+						 <td>2</td>
+						 <td>20</td>
+						 <td>0.9</td>
+						 <td>40</td>
 					 </tr>
-
-					 <tr>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-						 <td>内容</td>
-					 </tr>
-
 
 
 					 </tbody>
 				 </table>
+
 
 
 			 </div>
@@ -250,6 +235,33 @@
 
 
 	 </div>
+
+
+
+	 <script>
+
+
+		 $('#procurementId').click(function(){
+			 var originStr = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+					 originChar = '0123456789abcdef',
+					 len = originChar.length;
+
+			 $("#procurementId").val(originStr.replace(/x/g, function(match) {
+				 return originChar.charAt(Math.floor(Math.random() * len))
+			 }));
+
+		 });
+
+
+
+
+
+
+
+
+
+
+	 </script>
 	</body>
 
 

@@ -11,7 +11,7 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
 	<div class="ibox float-e-margins">
-		<form id="searchForm" action="${path }/procurement/query.do">
+		<form id="searchForm" action="${path }/procure/query.do">
 			<div class="col-sm-12">
 				<!-- ------------按钮组 start------------ -->
 				<div class="alert alert-success" role="alert">采购单信息</div>
@@ -52,7 +52,7 @@
 						<button type="button"  data-toggle="modal" id="creat" name="test/create.jsp">
 							<i  aria-hidden="true"></i>详情
 						</button>
-						<button type="button"  data-toggle="modal" id="delete" name="procurement/delete.do">
+						<button type="button"  data-toggle="modal" id="delete" name="procure/delete.do">
 							<i  aria-hidden="true"></i>删除
 						</button>
 						<button type="button"  data-toggle="modal" id="upda" name="test/view.do">
