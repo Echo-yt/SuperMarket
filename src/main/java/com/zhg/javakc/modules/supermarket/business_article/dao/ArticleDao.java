@@ -11,4 +11,5 @@ import com.zhg.javakc.modules.supermarket.business_article.entity.ArticleEntity;
 public interface ArticleDao extends BaseDao<ArticleEntity> {
 
     public void upstate(String id);
+    public Integer queryState(Integer i);
 }
