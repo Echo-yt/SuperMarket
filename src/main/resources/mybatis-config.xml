@@ -31,6 +31,7 @@
 		<typeAlias type="com.zhg.javakc.modules.supermarket.commodity_image.entity.ImageEntity"/>
 		<typeAlias type="com.zhg.javakc.modules.supermarket.business_article.entity.ArticleEntity"/>
 		<typeAlias type="com.zhg.javakc.modules.supermarket.commodity.entity.CommodityEntity"/>
+		<typeAlias type="com.zhg.javakc.modules.supermarket.commodity_type.entity.TypeEntity"/>
 
 	</typeAliases>
 	

@@ -1,0 +1,3 @@
+$('#queryAll').click(function()
+{
+});
