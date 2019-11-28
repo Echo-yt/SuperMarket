@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.stock_check.dao.StockCheckDao">
+
+    <select id="findList" resultType="com.zhg.javakc.modules.supermarket.stock_check.entity.StockCheckEntity">
+        SELECT CHECK_ID AS checkId,
+        CHECK_STATE AS checkState,
+        CHECK_OPERATER AS checkOperator,
+        CHECK_REMARK AS checkRemark,
+        CHECK_CREATOR AS checkCreator,
+        CHECK_CREATETIME AS checkCreateTime,
+        CHECK_CHECKER AS checkChecker,
+        CHECK_CHECKTIME AS checkCheckTime,
+        CHECK_OUTPUT_STYLE AS checkOutputStyle FROM STOCK_CHECK
+    </select>
+</mapper>

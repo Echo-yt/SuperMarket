@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhg.javakc.modules.supermarket.stock_detail.dao.StockDetailDao">
+
+    <select id="findList" resultType="com.zhg.javakc.modules.supermarket.stock_detail.entity.StockDetailEntity">
+        SELECT ENTRY_ID AS entryId,
+        ENTRY_STATE AS entryState,
+        ENTRY_TYPE AS entryType,
+        ENTRY_OPERATOR AS entryOperator,
+        ENTRY_REMARK AS entryRemary,
+        ENTRY_CREATOR AS entryCreator,
+        ENTRY_CREATETIME AS entryCreateTime,
+        ENTRY_CHECKER AS entryChecker,
+        ENTRY_CHECKTIME AS entryCheckTime,
+        ENTRY_INOUT AS entryInout,
+        PROCUREMENT_ID AS procurementId,
+        ORDER_ID AS orderId FROM STOCK_DETAIL
+    </select>
+</mapper>
